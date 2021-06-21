@@ -29,5 +29,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::domain('app.bappy.bringoit.com')->group(function ($router) {
-    dd('hello');
+
 });
