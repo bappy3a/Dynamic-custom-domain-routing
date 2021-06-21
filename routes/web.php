@@ -14,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Auth::routes();
 
 
 Route::domain('{subdomain}.'.config('app.short_url'))->group(function () {
     Route::view('/','welcome')->name('domain');
 });
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Auth::routes();
