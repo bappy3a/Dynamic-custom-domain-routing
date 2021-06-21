@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,20 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::domain('{account}.domain.bappy.pc')->group(function () {
-//     Route::get('user/{id}', function ($account, $id) {
-//         dd($account);
-//     });
-// });
-
-
-Route::domain('app.bappy.bringoit.com')->group(function ($router) {
-
+Route::domain('{subdomain}.'.config('app.short_url'))->group(function () {
+    Route::view('/','welcome')->name('domain');
 });

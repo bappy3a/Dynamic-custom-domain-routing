@@ -25,4 +25,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function domain_index($subdomain)
+    {
+        return view('welcome');
+    }
+
+    public function domain_product($subdomain)
+    {
+        return view('welcome');
+    }
+
 }
